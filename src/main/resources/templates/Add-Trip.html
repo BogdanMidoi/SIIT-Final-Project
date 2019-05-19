@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymleaf/;ayout" xmlns="http://www.thymleaf.org">
+<body>
+<h1 th:text="#{label.form.title}">form</h1>
+<form action="/" th:object="${user}" method="POST" enctype="utf8">
+    <div>
+        <label th:text="#{label.user.tripName}">tripName</label>
+        <input th:field="*{tripName}"/>
+        <p th:each="error: ${#fields.errors('tripName')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.dateFrom}">dateFrom</label>
+        <input th:field="*{dateFrom}"/>
+        <p th:each="error : ${#fields.errors('dateFrom')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.dateTo}">dateTo</label>
+        <input th:field="*{dateTo}"/>
+        <p th:each="error : ${#fields.errors('dateTo')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.impressions}">impressions</label>
+        <input type="email" th:field="*{impressions}"/>
+        <p th:each="error : ${#fields.errors('impressions')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.photos}">photo</label>
+        <input th:field="*{photo}"/>
+        <p th:each="error : ${#fields.errors('photo')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.video}">video</label>
+        <input th:field="*{video}"/>
+        <p th:each="error : ${#fields.errors('video')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <div>
+        <label th:text="#{label.user.location}">location</label>
+        <input type="password" th:field="*{location}"/>
+        <p th:each="error : ${#fields.errors('location')}"
+           th:text="${error}">Validation error</p>
+    </div>
+
+    <button type="submit" th:text="#{label.form.submit}">submit</button>
+</form>
+<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+    <input type="text" name="extraField"/><br/><br/>
+    <input type="file" name="files"/><br/><br/>
+    <input type="file" name="files"/><br/><br/>
+    <input type="submit" value="Submit" id="btnSubmit"/>
+</form>
+
+<h1>Ajax Post Result</h1>
+<pre>
+    <span id="result"></span>
+</pre>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+
+
+<a th:href="@{/login.html}" th:text="#{label.form.loginLink}">login</a>
+</body>
+</html>
