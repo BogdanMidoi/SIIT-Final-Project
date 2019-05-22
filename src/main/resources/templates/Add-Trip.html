@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymleaf/;ayout" xmlns="http://www.thymleaf.org">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymleaf/layout" xmlns="http://www.thymleaf.org">
 <body>
 <h1 th:text="#{label.form.title}">form</h1>
 <form action="/" th:object="${user}" method="POST" enctype="utf8">
@@ -47,9 +47,11 @@
     </div>
 
     <button type="submit" th:text="#{label.form.submit}">submit</button>
+
+    Google Maps
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11159.19036183884!2d25.625988719775396!3d45.634802350000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sro!4v1557990448387!5m2!1sen!2sro" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 </form>
 <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
-    <input type="text" name="extraField"/><br/><br/>
     <input type="file" name="files"/><br/><br/>
     <input type="file" name="files"/><br/><br/>
     <input type="submit" value="Submit" id="btnSubmit"/>

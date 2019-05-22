@@ -12,7 +12,7 @@ import java.io.File;
 public class FinalProjectApplication {
 
 	public static void main(String[] args) {
-		new File(FileUpload.uploadDirectory).mkdir();
+//		new File(FileUpload.uploadDirectory).mkdir();
 		SpringApplication.run(FinalProjectApplication.class, args);
 	}
 
